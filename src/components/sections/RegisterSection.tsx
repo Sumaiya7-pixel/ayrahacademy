@@ -1,14 +1,8 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
+import { UserPlus } from "lucide-react";
 
 const RegisterSection = () => {
-  const handleWhatsAppClick = () => {
-    const message = encodeURIComponent(
-      "Assalamu Alaikum, I would like to register my child for Ayrah Islamic Academy."
-    );
-    window.open(`https://wa.me/918925611202?text=${message}`, "_blank");
-  };
-
   return (
     <section id="register" className="py-20 bg-background islamic-pattern">
       <div className="container mx-auto px-4">
@@ -19,7 +13,7 @@ const RegisterSection = () => {
           
           <p className="text-muted-foreground mb-8">
             Join Ayrah Islamic Academy and give your child the gift of Islamic knowledge. 
-            Click the button below to register via WhatsApp.
+            Click the button below to start the registration process.
           </p>
 
           <div className="flex items-center justify-center gap-4 mb-8">
@@ -29,12 +23,14 @@ const RegisterSection = () => {
           </div>
 
           <Button
-            onClick={handleWhatsAppClick}
+            asChild
             size="lg"
-            className="bg-green-600 hover:bg-green-700 text-white text-lg px-10 py-7 shadow-lg"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 py-7 shadow-gold"
           >
-            <MessageCircle size={24} className="mr-3" />
-            Register via WhatsApp
+            <Link to="/register">
+              <UserPlus size={24} className="mr-3" />
+              Register Your Child
+            </Link>
           </Button>
 
           <p className="mt-6 text-muted-foreground text-sm">

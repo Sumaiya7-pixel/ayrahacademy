@@ -10,6 +10,7 @@ const navLinks = [
   { name: "Islamic Studies", path: "/islamic-studies" },
   { name: "Rules", path: "/rules" },
   { name: "FAQ", path: "/faq" },
+  { name: "Register", path: "/register" },
 ];
 
 const Navbar = () => {
@@ -49,12 +50,6 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <Button
-              onClick={handleWhatsAppClick}
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
-            >
-              Register Now
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -85,15 +80,6 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <Button
-                onClick={() => {
-                  setIsOpen(false);
-                  handleWhatsAppClick();
-                }}
-                className="bg-primary text-primary-foreground hover:bg-primary/90 w-full mt-2"
-              >
-                Register Now
-              </Button>
             </div>
           </div>
         )}

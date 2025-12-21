@@ -9,6 +9,7 @@ import QuranCourses from "./pages/QuranCourses";
 import IslamicStudies from "./pages/IslamicStudies";
 import Rules from "./pages/Rules";
 import FAQ from "./pages/FAQ";
+import StudentRegistration from "./pages/StudentRegistration";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/islamic-studies" element={<IslamicStudies />} />
           <Route path="/rules" element={<Rules />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/register" element={<StudentRegistration />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
