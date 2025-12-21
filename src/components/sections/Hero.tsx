@@ -1,14 +1,8 @@
+import { Link } from "react-router-dom";
 import ayrahLogo from "@/assets/ayrah-logo.jfif";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
-  const handleRegisterClick = () => {
-    const message = encodeURIComponent(
-      "Assalamu Alaikum, I would like to register my child for Ayrah Islamic Academy."
-    );
-    window.open(`https://wa.me/918925611202?text=${message}`, "_blank");
-  };
-
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -54,11 +48,11 @@ const Hero = () => {
           {/* CTA Button */}
           <div className="pt-4 animate-fade-in" style={{ animationDelay: "0.5s" }}>
             <Button
-              onClick={handleRegisterClick}
+              asChild
               size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 shadow-gold"
             >
-              Admissions Open – Register Now
+              <Link to="/register">Admissions Open – Register Now</Link>
             </Button>
           </div>
         </div>
