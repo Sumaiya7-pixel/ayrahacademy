@@ -1,62 +1,60 @@
-import RegisterForm from "@/components/RegisterForm";
+import Layout from "@/components/layout/Layout";
+import Hero from "@/components/sections/Hero";
+import AboutPreview from "@/components/sections/AboutPreview";
+import VisionSection from "@/components/sections/VisionSection";
+import ClassTimings from "@/components/sections/ClassTimings";
+import RegisterSection from "@/components/sections/RegisterSection";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { BookOpen, GraduationCap, ArrowRight } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0 gradient-surface" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] gradient-glow animate-pulse-glow" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-      
-      {/* Subtle grid pattern */}
-      <div 
-        className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),
-                           linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px'
-        }}
-      />
-
-      {/* Main content */}
-      <div className="relative z-10 w-full max-w-md animate-slide-up">
-        {/* Logo/Brand */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl gradient-primary shadow-glow mb-4">
-            <svg 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              className="w-6 h-6 text-primary-foreground"
-              stroke="currentColor" 
-              strokeWidth="2.5"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5z" />
-              <path d="M2 17l10 5 10-5" />
-              <path d="M2 12l10 5 10-5" />
-            </svg>
+    <Layout>
+      <Hero />
+      <AboutPreview />
+      <VisionSection />
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Our <span className="text-primary">Courses</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Comprehensive Islamic education programs designed for children of all ages
+            </p>
           </div>
-          <h1 className="text-2xl font-bold text-foreground mb-2">
-            Create your account
-          </h1>
-          <p className="text-muted-foreground">
-            Start your journey with us today
-          </p>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="p-8 bg-card border border-border rounded-lg hover:border-primary/50 transition-all group">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                <BookOpen size={32} />
+              </div>
+              <h3 className="font-display text-2xl font-semibold text-foreground mb-3">Qur'an Programs</h3>
+              <p className="text-muted-foreground mb-6">Hifz, Naazira, Tajweed, and Surah Memorization courses for complete Qur'anic education.</p>
+              <Link to="/quran-courses">
+                <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground group/btn">
+                  View Courses <ArrowRight size={16} className="ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+            </div>
+            <div className="p-8 bg-card border border-border rounded-lg hover:border-primary/50 transition-all group">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                <GraduationCap size={32} />
+              </div>
+              <h3 className="font-display text-2xl font-semibold text-foreground mb-3">Islamic Studies</h3>
+              <p className="text-muted-foreground mb-6">Hadees, Islamic Duas, and basic Deeniyath courses for moral and spiritual development.</p>
+              <Link to="/islamic-studies">
+                <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground group/btn">
+                  View Courses <ArrowRight size={16} className="ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+            </div>
+          </div>
         </div>
-
-        {/* Form card */}
-        <div className="glass rounded-2xl p-8 shadow-card animate-scale-in" style={{ animationDelay: '0.1s' }}>
-          <RegisterForm />
-        </div>
-
-        {/* Terms */}
-        <p className="text-center text-xs text-muted-foreground mt-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-          By creating an account, you agree to our{" "}
-          <a href="#" className="text-primary hover:underline">Terms of Service</a>
-          {" "}and{" "}
-          <a href="#" className="text-primary hover:underline">Privacy Policy</a>
-        </p>
-      </div>
-    </div>
+      </section>
+      <ClassTimings />
+      <RegisterSection />
+    </Layout>
   );
 };
 
