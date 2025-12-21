@@ -37,11 +37,11 @@ const StudentRegistration = () => {
     const message = `Assalamu Alaikum,
 
 Student Name: ${formData.studentName}
-Age: ${formData.studentAge}
+Student Age: ${formData.studentAge}
 Parent Name: ${formData.parentName}
 Mobile Number: ${formData.mobileNumber}
 
-I would like to register my child for Ayrah Islamic Academy.`;
+I would like to register for Ayrah Islamic Academy.`;
 
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/918925611202?text=${encodedMessage}`, "_blank");
@@ -91,14 +91,12 @@ I would like to register my child for Ayrah Islamic Academy.`;
                 <div className="space-y-2">
                   <Label htmlFor="studentAge" className="text-foreground flex items-center gap-2">
                     <Calendar size={16} className="text-primary" />
-                    Student Age
+                    Student Age (Applicable for all ages)
                   </Label>
                   <Input
                     id="studentAge"
                     name="studentAge"
                     type="number"
-                    min="3"
-                    max="18"
                     placeholder="Enter student's age"
                     value={formData.studentAge}
                     onChange={handleInputChange}
